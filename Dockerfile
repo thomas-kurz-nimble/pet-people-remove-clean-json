@@ -45,7 +45,7 @@ RUN comfy model download --url https://huggingface.co/h94/IP-Adapter/resolve/mai
 
 RUN comfy model download --url https://huggingface.co/stabilityai/sdxl-vae/resolve/main/sdxl_vae.safetensors --relative-path models/vae/SDXL --filename sdxl_vae.safetensors
 
-RUN comfy model download --url https://huggingface.co/diffusers/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors --relative-path models/controlnet/SDXL/controlnet-canny-sdxl-1.0 --filename diffusion_pytorch_model_V2.safetensors
+RUN comfy model download --url https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0/resolve/main/diffusion_pytorch_model_V2.safetensors --relative-path models/controlnet/SDXL/controlnet-canny-sdxl-1.0 --filename diffusion_pytorch_model_V2.safetensors
 
 RUN comfy model download --url https://huggingface.co/diffusers/controlnet-depth-sdxl-1.0/resolve/main/diffusion_pytorch_model.safetensors --relative-path models/controlnet/SDXL/controlnet-depth-sdxl-1.0 --filename diffusion_pytorch_model.safetensors
 

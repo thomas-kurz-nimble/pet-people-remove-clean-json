@@ -1,0 +1,838 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 959379196451669,
+          "steps": 10,
+          "cfg": 3,
+          "sampler_name": "dpmpp_sde_gpu",
+          "scheduler": "karras",
+          "denoise": 0.75,
+          "model": [
+            "255",
+            0
+          ],
+          "positive": [
+            "259",
+            0
+          ],
+          "negative": [
+            "259",
+            1
+          ],
+          "latent_image": [
+            "223",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "11": {
+        "inputs": {
+          "text": "nudity, low quality, watermark, text, blurry, noisy, realistic",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "36": {
+        "inputs": {
+          "image": "test00009.jpg"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "209": {
+        "inputs": {
+          "text": "masterpiece, best quality, vibrant pop art, vibrant colors, broad strokes, paint splatters, brush strokes, wide paint strokes, black and purple",
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "223": {
+        "inputs": {
+          "value": 512,
+          "pixels": [
+            "368",
+            0
+          ],
+          "vae": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "VAEEncodeTiled",
+        "_meta": {
+          "title": "VAEEncodeTiled"
+        }
+      },
+      "255": {
+        "inputs": {
+          "value": 3,
+          "model": [
+            "446",
+            0
+          ]
+        },
+        "class_type": "PerturbedAttention",
+        "_meta": {
+          "title": "PerturbedAttention"
+        }
+      },
+      "258": {
+        "inputs": {
+          "value": 0.9,
+          "positive": [
+            "279",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "control_net": [
+            "256",
+            0
+          ],
+          "image": [
+            "379",
+            0
+          ],
+          "timestep_kf": [
+            "322",
+            0
+          ],
+          "weights_override": [
+            "264",
+            0
+          ],
+          "vae_optional": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "ACN_AdvancedControlNetApply",
+        "_meta": {
+          "title": "ACN_AdvancedControlNetApply"
+        }
+      },
+      "259": {
+        "inputs": {
+          "value": 0.7000000000000001,
+          "positive": [
+            "258",
+            0
+          ],
+          "negative": [
+            "258",
+            1
+          ],
+          "control_net": [
+            "257",
+            0
+          ],
+          "image": [
+            "465",
+            0
+          ],
+          "vae_optional": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "ACN_AdvancedControlNetApply",
+        "_meta": {
+          "title": "ACN_AdvancedControlNetApply"
+        }
+      },
+      "264": {
+        "inputs": {
+          "value": 0.9500000000000001
+        },
+        "class_type": "ACN_ScaledSoftControlNetWeights",
+        "_meta": {
+          "title": "ACN_ScaledSoftControlNetWeights"
+        }
+      },
+      "273": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "278": {
+        "inputs": {
+          "text": [
+            "466",
+            0
+          ],
+          "clip": [
+            "4",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+          "title": "CLIPTextEncode"
+        }
+      },
+      "279": {
+        "inputs": {
+          "value": 0.85,
+          "conditioning_to": [
+            "209",
+            0
+          ],
+          "conditioning_from": [
+            "278",
+            0
+          ]
+        },
+        "class_type": "ConditioningAverage",
+        "_meta": {
+          "title": "ConditioningAverage"
+        }
+      },
+      "292": {
+        "inputs": {
+          "seed": 256077985451568,
+          "steps": 4,
+          "cfg": 2,
+          "sampler_name": "dpmpp_2m_sde_gpu",
+          "scheduler": "karras",
+          "denoise": 0.43,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "279",
+            0
+          ],
+          "negative": [
+            "11",
+            0
+          ],
+          "latent_image": [
+            "303",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "299": {
+        "inputs": {
+          "text": "ComfyUI",
+          "images": [
+            "421",
+            0
+          ]
+        },
+        "class_type": "Save_as_jpeg",
+        "_meta": {
+          "title": "Save_as_jpeg"
+        }
+      },
+      "303": {
+        "inputs": {
+          "value": 768,
+          "pixels": [
+            "397",
+            0
+          ],
+          "vae": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "VAEEncodeTiled",
+        "_meta": {
+          "title": "VAEEncodeTiled"
+        }
+      },
+      "304": {
+        "inputs": {
+          "value": 512,
+          "samples": [
+            "292",
+            0
+          ],
+          "vae": [
+            "224",
+            0
+          ]
+        },
+        "class_type": "VAEDecodeTiled",
+        "_meta": {
+          "title": "VAEDecodeTiled"
+        }
+      },
+      "319": {
+        "inputs": {
+          "value": 0
+        },
+        "class_type": "TimestepKeyframe",
+        "_meta": {
+          "title": "TimestepKeyframe"
+        }
+      },
+      "320": {
+        "inputs": {
+          "value": 0.6950000000000001,
+          "prev_timestep_kf": [
+            "319",
+            0
+          ]
+        },
+        "class_type": "TimestepKeyframe",
+        "_meta": {
+          "title": "TimestepKeyframe"
+        }
+      },
+      "321": {
+        "inputs": {
+          "value": 0.8,
+          "prev_timestep_kf": [
+            "320",
+            0
+          ]
+        },
+        "class_type": "TimestepKeyframe",
+        "_meta": {
+          "title": "TimestepKeyframe"
+        }
+      },
+      "322": {
+        "inputs": {
+          "value": 0.9,
+          "prev_timestep_kf": [
+            "321",
+            0
+          ]
+        },
+        "class_type": "TimestepKeyframe",
+        "_meta": {
+          "title": "TimestepKeyframe"
+        }
+      },
+      "334": {
+        "inputs": {
+          "text": [
+            "466",
+            0
+          ]
+        },
+        "class_type": "ShowText|pysssss",
+        "_meta": {
+          "title": "ShowText|pysssss"
+        }
+      },
+      "346": {
+        "inputs": {
+          "value": 0.25,
+          "model": [
+            "347",
+            0
+          ],
+          "ipadapter": [
+            "347",
+            1
+          ],
+          "pos_embed": [
+            "436",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEmbeds",
+        "_meta": {
+          "title": "IPAdapterEmbeds"
+        }
+      },
+      "347": {
+        "inputs": {
+          "text": "STANDARD (medium strength)",
+          "model": [
+            "4",
+            0
+          ]
+        },
+        "class_type": "IPAdapterUnifiedLoader",
+        "_meta": {
+          "title": "IPAdapterUnifiedLoader"
+        }
+      },
+      "348": {
+        "inputs": {
+          "filename": "ipadapapter_embeds/Vibrant_style_pos_embeds1_00001.ipadpt"
+        },
+        "class_type": "IPAdapterLoadEmbeds",
+        "_meta": {
+          "title": "IPAdapterLoadEmbeds"
+        }
+      },
+      "349": {
+        "inputs": {
+          "value": 0.35000000000000003,
+          "model": [
+            "346",
+            0
+          ],
+          "ipadapter": [
+            "347",
+            1
+          ],
+          "pos_embed": [
+            "439",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEmbeds",
+        "_meta": {
+          "title": "IPAdapterEmbeds"
+        }
+      },
+      "350": {
+        "inputs": {
+          "filename": "ipadapapter_embeds/Vibrant_style_pos_embeds2_00001.ipadpt"
+        },
+        "class_type": "IPAdapterLoadEmbeds",
+        "_meta": {
+          "title": "IPAdapterLoadEmbeds"
+        }
+      },
+      "364": {
+        "inputs": {
+          "value": 800,
+          "image": [
+            "36",
+            0
+          ]
+        },
+        "class_type": "ResizeImage",
+        "_meta": {
+          "title": "ResizeImage"
+        }
+      },
+      "368": {
+        "inputs": {
+          "value": 1024,
+          "image": [
+            "471",
+            0
+          ]
+        },
+        "class_type": "ResizeImage",
+        "_meta": {
+          "title": "ResizeImage"
+        }
+      },
+      "372": {
+        "inputs": {
+          "text": "Grayscale",
+          "image": [
+            "368",
+            0
+          ]
+        },
+        "class_type": "ImageNormalization",
+        "_meta": {
+          "title": "ImageNormalization"
+        }
+      },
+      "379": {
+        "inputs": {
+          "text": "lineart_realisitic",
+          "image": [
+            "372",
+            0
+          ]
+        },
+        "class_type": "AnyLineArtPreprocessor_aux",
+        "_meta": {
+          "title": "AnyLineArtPreprocessor_aux"
+        }
+      },
+      "396": {
+        "inputs": {
+          "value": 1504,
+          "image": [
+            "424",
+            0
+          ]
+        },
+        "class_type": "ResizeImage",
+        "_meta": {
+          "title": "ResizeImage"
+        }
+      },
+      "397": {
+        "inputs": {
+          "value": 2112,
+          "image": [
+            "396",
+            0
+          ]
+        },
+        "class_type": "CropImage",
+        "_meta": {
+          "title": "CropImage"
+        }
+      },
+      "405": {
+        "inputs": {
+          "value": 2100,
+          "image": [
+            "304",
+            0
+          ]
+        },
+        "class_type": "CropImage",
+        "_meta": {
+          "title": "CropImage"
+        }
+      },
+      "421": {
+        "inputs": {
+          "text": "Name Name",
+          "image": [
+            "405",
+            0
+          ]
+        },
+        "class_type": "Text Overlay",
+        "_meta": {
+          "title": "Text Overlay"
+        }
+      },
+      "422": {
+        "inputs": {
+          "text": "with_shading",
+          "image": [
+            "465",
+            0
+          ],
+          "color_palette": [
+            "442",
+            0
+          ]
+        },
+        "class_type": "DepthMapColorizer",
+        "_meta": {
+          "title": "DepthMapColorizer"
+        }
+      },
+      "423": {
+        "inputs": {
+          "value": 0.75,
+          "image1": [
+            "422",
+            0
+          ],
+          "image2": [
+            "273",
+            0
+          ]
+        },
+        "class_type": "ImageBlend",
+        "_meta": {
+          "title": "ImageBlend"
+        }
+      },
+      "424": {
+        "inputs": {
+          "text": "Edge",
+          "image": [
+            "450",
+            0
+          ],
+          "target_colors": [
+            "442",
+            0
+          ]
+        },
+        "class_type": "PaletteOptimalTransportTransfer",
+        "_meta": {
+          "title": "PaletteOptimalTransportTransfer"
+        }
+      },
+      "429": {
+        "inputs": {
+          "image": "fragment-multicolored-texture-painting-abstract-art-background-oil-canvas-rough-brushstrokes-paint-c.jpg"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "430": {
+        "inputs": {
+          "image": "ipadapter_reference_image.webp"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "431": {
+        "inputs": {
+          "text": "LANCZOS",
+          "image": [
+            "429",
+            0
+          ]
+        },
+        "class_type": "PrepImageForClipVision",
+        "_meta": {
+          "title": "PrepImageForClipVision"
+        }
+      },
+      "432": {
+        "inputs": {
+          "text": "LANCZOS",
+          "image": [
+            "430",
+            0
+          ]
+        },
+        "class_type": "PrepImageForClipVision",
+        "_meta": {
+          "title": "PrepImageForClipVision"
+        }
+      },
+      "433": {
+        "inputs": {
+          "filename": "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors"
+        },
+        "class_type": "CLIPVisionLoader",
+        "_meta": {
+          "title": "CLIPVisionLoader"
+        }
+      },
+      "436": {
+        "inputs": {
+          "value": 1,
+          "ipadapter": [
+            "437",
+            0
+          ],
+          "image": [
+            "431",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEncoder",
+        "_meta": {
+          "title": "IPAdapterEncoder"
+        }
+      },
+      "437": {
+        "inputs": {
+          "filename": "ip-adapter_sdxl_vit-h.safetensors"
+        },
+        "class_type": "IPAdapterModelLoader",
+        "_meta": {
+          "title": "IPAdapterModelLoader"
+        }
+      },
+      "439": {
+        "inputs": {
+          "value": 1,
+          "ipadapter": [
+            "437",
+            0
+          ],
+          "image": [
+            "432",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEncoder",
+        "_meta": {
+          "title": "IPAdapterEncoder"
+        }
+      },
+      "442": {
+        "inputs": {
+          "text": "[(212, 50, 99), (156, 68, 100), (136, 183, 195),\n(224, 210, 200), (92, 35, 54), (222, 141, 101), (16, 13, 19),\n(47, 134, 175), (43, 48, 79), (138, 32, 36), (58, 27, 41),\n(33, 27, 49), (109, 121, 172), (220, 86, 41), (114, 74, 168), (53, 53, 54), (28, 28, 28), (153, 17, 150), (237, 62, 192), (184, 207, 105), (251, 208, 92), (169, 187, 217), (211, 215, 222)]"
+        },
+        "class_type": "ColorPalette",
+        "_meta": {
+          "title": "ColorPalette"
+        }
+      },
+      "443": {
+        "inputs": {
+          "image": "bright-colorful-acrylic-watercolor-splash-600nw-2450236343.webp"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "444": {
+        "inputs": {
+          "text": "LANCZOS",
+          "image": [
+            "443",
+            0
+          ]
+        },
+        "class_type": "PrepImageForClipVision",
+        "_meta": {
+          "title": "PrepImageForClipVision"
+        }
+      },
+      "445": {
+        "inputs": {
+          "value": 1,
+          "ipadapter": [
+            "437",
+            0
+          ],
+          "image": [
+            "444",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEncoder",
+        "_meta": {
+          "title": "IPAdapterEncoder"
+        }
+      },
+      "446": {
+        "inputs": {
+          "value": 0.75,
+          "model": [
+            "349",
+            0
+          ],
+          "ipadapter": [
+            "347",
+            1
+          ],
+          "pos_embed": [
+            "445",
+            0
+          ],
+          "clip_vision": [
+            "433",
+            0
+          ]
+        },
+        "class_type": "IPAdapterEmbeds",
+        "_meta": {
+          "title": "IPAdapterEmbeds"
+        }
+      },
+      "450": {
+        "inputs": {
+          "value": 800,
+          "image": [
+            "423",
+            0
+          ]
+        },
+        "class_type": "ResizeImage",
+        "_meta": {
+          "title": "ResizeImage"
+        }
+      },
+      "462": {
+        "inputs": {
+          "value": 240,
+          "images": [
+            "364",
+            0
+          ],
+          "masks": [
+            "469",
+            0
+          ]
+        },
+        "class_type": "LamaRemover",
+        "_meta": {
+          "title": "LamaRemover"
+        }
+      },
+      "466": {
+        "inputs": {
+          "value": 20,
+          "image": [
+            "462",
+            0
+          ]
+        },
+        "class_type": "BLIPImageCaptioning",
+        "_meta": {
+          "title": "BLIPImageCaptioning"
+        }
+      },
+      "471": {
+        "inputs": {
+          "upscale_model": [
+            "472",
+            0
+          ],
+          "image": [
+            "462",
+            0
+          ]
+        },
+        "class_type": "ImageUpscaleWithModel",
+        "_meta": {
+          "title": "ImageUpscaleWithModel"
+        }
+      }
+    }
+  }
+}

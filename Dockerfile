@@ -73,4 +73,4 @@ RUN comfy node install https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 # RUN # Could not find URL for <model-name> (all models in this workflow were resolved)
 
 # copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
-# COPY input/ /comfyui/input/
+COPY input/ /comfyui/input/

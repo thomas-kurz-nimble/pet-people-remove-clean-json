@@ -53,7 +53,7 @@ RUN comfy model download --url https://github.com/xinntao/Real-ESRGAN/releases/d
 
 RUN comfy model download --url https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11x-seg.pt --relative-path models/ultralytics --filename yolo11x-seg.pt
 
-RUN comfy model download --url https://civitai.com/api/download/models/293991?type=Model&format=SafeTensor --relative-path models/checkpoints --filename SDXLFaetastic_v24.safetensors
+RUN comfy model download --url "https://civitai.com/api/download/models/293991?type=Model&format=SafeTensor" --relative-path models/checkpoints --filename SDXLFaetastic_v24.safetensors
 
 RUN comfy node install https://github.com/pamparamm/sd-perturbed-attention
 

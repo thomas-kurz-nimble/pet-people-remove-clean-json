@@ -69,6 +69,8 @@ RUN comfy node install https://github.com/cubiq/ComfyUI_IPAdapter_plus
 
 RUN comfy node install https://github.com/pythongosssss/ComfyUI-Custom-Scripts
 
+RUN mkdir -p /comfyui/web/extensions
+
 RUN comfy node install https://github.com/aureagle/comfyui-saveasjpeg
 
 # RUN # Could not find URL for <model-name> (all models in this workflow were resolved)

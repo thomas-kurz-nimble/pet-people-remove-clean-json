@@ -1,6 +1,15 @@
 # clean base image containing only comfyui, comfy-cli and comfyui-manager
 FROM runpod/worker-comfyui:5.5.1-base
 
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libgl1 \
+    libglib2.0-0 \
+    fonts-dejavu-core \
+    fonts-freefont-ttf \
+ && rm -rf /var/lib/apt/lists/*
+ 
 # install custom nodes into comfyui (first node with --mode remote to fetch updated cache)
 # No registry-verified custom nodes found in workflow.
 # The following custom nodes were in the workflow under unknown_registry but could not be resolved because no aux_id (GitHub repo) was provided:
@@ -73,7 +82,16 @@ RUN mkdir -p /comfyui/web/extensions
 
 RUN comfy node install https://github.com/aureagle/comfyui-saveasjpeg
 
-# RUN # Could not find URL for <model-name> (all models in this workflow were resolved)
+RUN comfy node install https://github.com/Munkyfoot/ComfyUI-TextOverlay
 
-# copy all input data (like images or videos) into comfyui (uncomment and adjust if needed)
+RUN comfy node install https://github.com/kijai/ComfyUI-KJNodes
+
+RUN comfy node install https://github.com/kijai/ComfyUI-Marigold
+
+RUN comfy node install https://github.com/ltdrdata/ComfyUI-Impact-Pack
+
+RUN comfy node install https://github.com/ltdrdata/ComfyUI-Impact-Subpack
+
+RUN comfy node install https://github.com/kijai/ComfyUI-DepthAnythingV2
+
 COPY input/ /comfyui/input/
